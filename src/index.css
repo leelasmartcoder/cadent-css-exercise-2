@@ -1,0 +1,106 @@
+:root {
+  font-size: 16px;
+  font-family: "Open Sans";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #242e41;
+}
+
+.app-header {
+  background-color: #242e41;
+  min-height: 10vh;
+  display: flex;
+  border-bottom: 1px solid #20293b;
+  align-items: center;
+}
+.app-header .header-logo {
+  height: 8vmin;
+}
+.app-header .app-hamburger-icon {
+  cursor: pointer;
+  padding-right: 10px;
+}
+.app-header .app-hamburger-icon-hide {
+  display: none;
+}
+.app-header > i {
+  color: white;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.navbar {
+  transform: translate(-350px, 0);
+  -webkit-transform: translate(-350px, 0);
+  /** Chrome & Safari **/
+  -o-transform: translate(-350px, 0);
+  /** Opera **/
+  -moz-transform: translate(-350px, 0);
+  /** Firefox **/
+  position: fixed;
+  background-color: #242e41;
+  transition: width 600ms ease;
+  overflow: scroll;
+  margin-top: 11vh;
+  color: #909fb0;
+  top: 0;
+  width: 16rem;
+  height: 100vh;
+  opacity: 0;
+  transition: all 500ms ease-in-out;
+}
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.navbar ul > li {
+  width: 100%;
+  transition: 600ms;
+}
+.navbar ul > li > a {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  background-color: #242e41;
+  text-decoration: none;
+  color: #1f8ef9;
+  transition: 600ms;
+}
+.navbar ul > li > a svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+  fill: #909fb0;
+}
+.navbar ul > li > a .link-text {
+  margin-left: 1rem;
+  color: #909fb0;
+}
+.navbar ul > li:hover {
+  background-color: #1f8ef9;
+  font-weight: bold;
+  fill: #1f8ef9;
+  padding-left: 10px;
+  color: #1f8ef9 !important;
+  fill: #1f8ef9 !important;
+}
+
+.navbar-display {
+  opacity: 1;
+  width: 16rem;
+  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  /** Chrome & Safari **/
+  -o-transform: translate(0, 0);
+  /** Opera **/
+  -moz-transform: translate(0, 0);
+  /** Firefox **/
+}

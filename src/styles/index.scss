@@ -1,0 +1,121 @@
+$theme-bg-color: rgb(36 46 65);
+$theme-bg-color-engrave: rgb(32 41 59);
+$menu-color: rgb(144 159 176);
+$active-menu-color: rgb(31 142 249);
+$transition-speed: 600ms;
+$font-size: 16px;
+
+@mixin translate($x, $y: 0) {
+  transform: translate($x, $y);
+  -webkit-transform: translate($x, $y); /** Chrome & Safari **/
+  -o-transform: translate($x, $y); /** Opera **/
+  -moz-transform: translate($x, $y); /** Firefox **/
+}
+
+:root {
+  font : {
+    size: $font-size;
+    family: "Open Sans";
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $theme-bg-color;
+}
+
+.app-header {
+  background-color: $theme-bg-color;
+  min-height: 10vh;
+  display: flex;
+  border-bottom: 1px solid $theme-bg-color-engrave;
+  align-items: center;
+
+  .header-logo {
+    height: 8vmin;
+  }
+
+  .app-hamburger-icon {
+    cursor: pointer;
+    padding-right: 10px;
+  }
+
+  .app-hamburger-icon-hide {
+    display: none;
+  }
+
+  > i {
+    color: white;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+}
+
+.navbar {
+  @include translate(-350px);
+
+  position: fixed;
+  background-color: $theme-bg-color;
+  transition: width 600ms ease;
+  overflow: scroll;
+  margin-top: 11vh;
+  color: $menu-color;
+  top: 0;
+  width: 16rem;
+  height: 100vh;
+  opacity: 0;
+  transition: all 500ms ease-in-out;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    > li {
+      width: 100%;
+      transition: $transition-speed;
+
+      > a {
+        display: flex;
+        align-items: center;
+        height: 5rem;
+        background-color: $theme-bg-color;
+        text-decoration: none;
+        color: $active-menu-color;
+        transition: $transition-speed;
+
+        svg {
+          width: 2rem;
+          min-width: 2rem;
+          margin: 0 1.5rem;
+          fill: $menu-color;
+        }
+
+        .link-text {
+          margin-left: 1rem;
+          color: $menu-color;
+        }
+      }
+    }
+
+    > li:hover {
+      background-color: $active-menu-color;
+      font-weight: bold;
+      fill: $active-menu-color;
+      padding-left: 10px;
+      color: $active-menu-color !important;
+      fill: $active-menu-color !important;
+    }
+  }
+}
+
+.navbar-display {
+  opacity: 1;
+  width: 16rem;
+  @include translate(0);
+}
